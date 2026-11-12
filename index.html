@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#eef2f4">
+<title>DORMER — Smart Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell" id="appShell">
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="Dormer home"><span class="brand-mark">D</span><span>DORMER</span></a>
+    <div class="side-label">WORKSPACE</div>
+    <nav class="side-nav" aria-label="Main navigation">
+      <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span><span>Overview</span></button>
+      <button class="nav-item" data-view="rooms"><span class="nav-icon">▦</span><span>Rooms</span><span class="nav-count">5</span></button>
+      <button class="nav-item" data-view="climate"><span class="nav-icon">☼</span><span>Climate</span></button>
+      <button class="nav-item" data-view="energy"><span class="nav-icon">ϟ</span><span>Energy</span></button>
+      <button class="nav-item" data-view="security"><span class="nav-icon">◇</span><span>Security</span></button>
+    </nav>
+    <div class="side-label second-label">YOUR HOME</div>
+    <div class="home-switcher"><span class="home-avatar">M</span><span><b>Maple Residence</b><small>Berlin, Germany</small></span><span class="chevron">⌄</span></div>
+    <div class="sidebar-bottom">
+      <div class="connection"><span class="online-dot"></span><span><b>All systems normal</b><small>Last synced just now</small></span></div>
+      <button class="profile"><span class="profile-avatar">MR</span><span><b>Maya Rivera</b><small>Home owner</small></span><span class="more">···</span></button>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <div class="breadcrumb"><span>Maple Residence</span><b>/</b><strong id="crumbCurrent">Overview</strong></div>
+      <div class="top-actions">
+        <div class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search devices..." aria-label="Search devices"></div>
+        <button class="icon-button" id="themeToggle" aria-label="Toggle dark theme" title="Toggle theme">◐</button>
+        <button class="icon-button notification" aria-label="Notifications">♧<i></i></button>
+        <button class="top-avatar" aria-label="Profile">MR</button>
+      </div>
+    </header>
+
+    <section class="view active" id="view-home">
+      <div class="welcome-row">
+        <div><div class="eyebrow"><span class="sun-small">✦</span> THURSDAY, NOVEMBER 12, 2026</div><h1>Good evening, Maya <span>✦</span></h1><p class="subheading">Your home is looking comfortable. Here's what's happening today.</p></div>
+        <button class="outline-button" id="quickActions">＋ <span>Quick actions</span></button>
+      </div>
+
+      <div class="home-grid">
+        <section class="floor-card card">
+          <div class="section-heading"><div><span class="eyebrow">YOUR SPACE</span><h2>Home overview</h2></div><button class="subtle-button" data-view-link="rooms">Explore rooms ↗</button></div>
+          <div class="floor-meta"><span><i class="legend-dot green"></i> 5 rooms connected</span><span><i class="legend-dot orange"></i> 12 devices active</span><span class="floor-zoom">⌕ &nbsp; 100%</span></div>
+          <div class="floor-wrap">
+            <svg class="floorplan" viewBox="0 0 760 440" role="img" aria-label="Isometric floor plan of a smart home with living room, kitchen, bedroom, bathroom and solar panels">
+              <defs>
+                <linearGradient id="floorA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f9f7ef"/><stop offset="1" stop-color="#e4e8df"/></linearGradient>
+                <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fdfcf7"/><stop offset="1" stop-color="#c9d2ca"/></linearGradient>
+                <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9cc6c9"/><stop offset="1" stop-color="#dce9df"/></linearGradient>
+                <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="8"/></filter>
+              </defs>
+              <ellipse cx="370" cy="360" rx="315" ry="38" fill="#849b86" opacity=".17" filter="url(#shadow)"/>
+              <!-- ground garden -->
+              <path d="M50 250 360 65 705 255 390 438Z" fill="#dfe8d7" opacity=".7"/>
+              <path d="M70 246 365 78 680 254 383 420Z" fill="#e9eee4"/>
+              <!-- house base -->
+              <path d="M112 238 376 85 645 238 380 395Z" fill="#aebcb0" opacity=".65"/>
+              <path d="M112 220 376 68 645 220 380 372Z" fill="#f8f7ef" stroke="#65746c" stroke-width="3"/>
+              <!-- room floor areas -->
+              <path d="M126 218 273 133 405 209 258 295Z" fill="#eee7d9" stroke="#c4c7bc" stroke-width="2"/>
+              <path d="M273 133 376 74 510 151 405 209Z" fill="#e9e4d4" stroke="#c4c7bc" stroke-width="2"/>
+              <path d="M258 295 405 209 530 282 383 368Z" fill="#e7e9dc" stroke="#c4c7bc" stroke-width="2"/>
+              <path d="M405 209 510 151 631 221 530 282Z" fill="#e8e3d5" stroke="#c4c7bc" stroke-width="2"/>
+              <path d="M126 218 258 295 258 323 126 246Z" fill="#d0d8cd"/>
+              <path d="M258 295 383 368 383 395 258 323Z" fill="#b9c8ba"/>
+              <path d="M383 368 530 282 530 309 383 395Z" fill="#c3d0c3"/>
+              <path d="M530 282 631 221 631 248 530 309Z" fill="#b5c4b9"/>
+              <!-- outer walls -->
+              <path d="M112 220 112 195 376 42 376 68Z" fill="#9aaf9d" stroke="#6e8075" stroke-width="2"/>
+              <path d="M376 68 376 42 645 195 645 220Z" fill="#b9c8bc" stroke="#6e8075" stroke-width="2"/>
+              <path d="M112 220 126 228 126 205 112 195Z" fill="#d9e0d5"/>
+              <!-- partitions -->
+              <path d="M273 133 273 245 258 254 258 142Z" fill="url(#wall)" stroke="#aeb8ae" stroke-width="2"/>
+              <path d="M405 209 405 290 390 299 390 218Z" fill="url(#wall)" stroke="#aeb8ae" stroke-width="2"/>
+              <path d="M510 151 510 229 495 238 495 160Z" fill="url(#wall)" stroke="#aeb8ae" stroke-width="2"/>
+              <path d="M258 295 258 323 273 315 273 286Z" fill="#a9b8aa"/>
+              <path d="M405 209 420 201 420 282 405 290Z" fill="#d4d9ce"/>
+              <!-- windows -->
+              <path d="M148 199 226 154 226 166 148 211Z" fill="url(#glass)" stroke="#91aaa3" stroke-width="2"/>
+              <path d="M432 100 500 139 500 151 432 112Z" fill="url(#glass)" stroke="#91aaa3" stroke-width="2"/>
+              <path d="M546 211 602 179 602 192 546 224Z" fill="url(#glass)" stroke="#91aaa3" stroke-width="2"/>
+              <!-- living room furniture -->
+              <path d="M160 211 208 184 258 213 210 241Z" fill="#c9d5c6" stroke="#9aa99a" stroke-width="2"/>
+              <path d="M160 211 160 229 210 258 210 241Z" fill="#9eafa0"/>
+              <path d="M210 241 258 213 258 231 210 258Z" fill="#aebcae"/>
+              <path d="M177 194 210 175 245 195 212 215Z" fill="#f1d5b6" stroke="#c9ae91" stroke-width="2"/>
+              <path d="M177 194 177 205 212 225 212 215Z" fill="#d2b99c"/>
+              <path d="M212 215 245 195 245 206 212 225Z" fill="#c7ad8f"/>
+              <path d="M137 247 159 234 185 249 163 262Z" fill="#b7c9b2"/>
+              <!-- kitchen counters -->
+              <path d="M300 145 354 114 399 140 345 172Z" fill="#c4bda9" stroke="#9f9b8b" stroke-width="2"/>
+              <path d="M300 145 300 157 345 183 345 172Z" fill="#a69f8f"/>
+              <path d="M345 172 399 140 399 152 345 183Z" fill="#b2aa98"/>
+              <path d="M315 143 346 125 370 139 339 157Z" fill="#e5e0d3"/>
+              <path d="M315 143 339 157 339 162 315 148Z" fill="#b9b5a8"/>
+              <path d="M368 177 393 163 414 175 389 190Z" fill="#e4dfd1"/>
+              <!-- bedroom -->
+              <path d="M435 236 481 209 526 235 480 263Z" fill="#c5d5d7" stroke="#a2b7b6" stroke-width="2"/>
+              <path d="M435 236 435 260 480 286 480 263Z" fill="#a6c0c1"/>
+              <path d="M480 263 526 235 526 259 480 286Z" fill="#8faeb0"/>
+              <path d="M447 233 480 214 513 233 480 252Z" fill="#f4f1e8"/>
+              <path d="M454 230 480 215 495 224 469 239Z" fill="#fffdf4"/>
+              <!-- bathroom -->
+              <path d="M540 244 574 224 613 246 579 267Z" fill="#d5e5e2" stroke="#a6c2bf" stroke-width="2"/>
+              <ellipse cx="578" cy="242" rx="15" ry="9" fill="#f8f8f2" stroke="#b4c9c4" stroke-width="2"/>
+              <path d="M560 266 582 253 602 264 580 277Z" fill="#f7f6ee"/>
+              <!-- dining table -->
+              <path d="M324 249 365 225 409 250 368 274Z" fill="#d2b38e" stroke="#b49470" stroke-width="2"/>
+              <path d="M324 249 324 258 368 283 368 274Z" fill="#b89570"/>
+              <path d="M368 274 409 250 409 259 368 283Z" fill="#a98461"/>
+              <circle cx="343" cy="234" r="7" fill="#e4e9d5"/><circle cx="384" cy="257" r="7" fill="#e4e9d5"/>
+              <!-- room markers -->
+              <g class="room-hotspot" data-room="Living room" tabindex="0" role="button"><circle cx="204" cy="264" r="12"/><text x="204" y="267">L</text></g>
+              <g class="room-hotspot" data-room="Kitchen & dining" tabindex="0" role="button"><circle cx="363" cy="194" r="12"/><text x="363" y="197">K</text></g>
+              <g class="room-hotspot" data-room="Bedroom" tabindex="0" role="button"><circle cx="479" cy="293" r="12"/><text x="479" y="296">B</text></g>
+              <!-- garden trees -->
+              <g><path d="M78 252v42" stroke="#9b7955" stroke-width="5"/><circle cx="78" cy="244" r="23" fill="#9fc38c"/><circle cx="70" cy="236" r="12" fill="#b4d2a0"/></g>
+              <g><path d="M610 310v38" stroke="#9b7955" stroke-width="5"/><circle cx="610" cy="300" r="22" fill="#a7c997"/><circle cx="602" cy="292" r="12" fill="#bed9a8"/></g>
+              <g><path d="M555 115v34" stroke="#9b7955" stroke-width="4"/><circle cx="555" cy="106" r="19" fill="#a8c997"/></g>
+              <!-- solar panels -->
+              <g transform="translate(584 130)"><path d="M0 28 90 80 90 17 0 -35Z" fill="#456e8a" stroke="#718b9b" stroke-width="2"/><path d="M30 -18v62M60 0v62M0 -4 90 48M0 17 90 69" stroke="#a7c3d0" stroke-width="2" opacity=".9"/><path d="M0 28 90 80" stroke="#263e52" stroke-width="3"/></g>
+            </svg>
+          </div>
+          <div class="floor-footer"><span>⌖ &nbsp; Interactive floor plan</span><button id="viewFloor">View floor plan ↗</button></div>
+        </section>
+
+        <section class="right-column">
+          <div class="scenes-card card">
+            <div class="section-heading"><div><span class="eyebrow">ONE TAP CONTROL</span><h2>Scenes</h2></div><button class="dots-button" aria-label="Scene options">···</button></div>
+            <div class="scene-list">
+              <button class="scene-button" data-scene="Away"><span>↗</span><small>Away</small></button>
+              <button class="scene-button" data-scene="Morning"><span>☀</span><small>Morning</small></button>
+              <button class="scene-button selected" data-scene="Relax"><span>☼</span><small>Relax</small></button>
+              <button class="scene-button" data-scene="Movie"><span>▻</span><small>Movie</small></button>
+              <button class="scene-button" data-scene="Night"><span>☾</span><small>Night</small></button>
+            </div>
+            <p class="scene-feedback" id="sceneFeedback">Relax scene is active</p>
+          </div>
+          <div class="climate-card card">
+            <div class="section-heading"><div><span class="eyebrow">INDOOR COMFORT</span><h2>Climate</h2></div><button class="subtle-button" data-view-link="climate">Details ↗</button></div>
+            <div class="climate-summary"><div><strong id="homeTemp">20.7°</strong><small>Living room</small></div><div class="weather-icon">☀<small>21.5°</small></div></div>
+            <div class="weather-caption">Partly cloudy <span>Feels like 20°</span></div>
+            <div class="forecast"><div><small>NOW</small><b>☀</b><strong>20°</strong></div><div><small>15:00</small><b>⛅</b><strong>21°</strong></div><div><small>16:00</small><b>☀</b><strong>22°</strong></div><div><small>17:00</small><b>☀</b><strong>21°</strong></div></div>
+          </div>
+        </section>
+      </div>
+
+      <section class="devices-section">
+        <div class="section-heading"><div><span class="eyebrow">CONNECTED DEVICES</span><h2>Energy use <span class="muted-inline">· Today</span></h2></div><button class="subtle-button" data-view-link="energy">View analytics ↗</button></div>
+        <div class="device-grid">
+          <div class="device-card card"><span class="device-icon sun">☼</span><div><b>Solar panels</b><small>Generating power</small></div><strong>2.4 <small>kW</small></strong></div>
+          <div class="device-card card"><span class="device-icon bulb">◉</span><div><b>Smart lighting</b><small>6 lights switched on</small></div><strong>0.4 <small>kW</small></strong></div>
+          <div class="device-card card"><span class="device-icon plug">ϟ</span><div><b>Home consumption</b><small>Live usage</small></div><strong>1.2 <small>kW</small></strong></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="view" id="view-rooms">
+      <div class="page-heading"><div><span class="eyebrow">YOUR SPACE</span><h1>Rooms</h1><p class="subheading">Manage devices and comfort in every room.</p></div><button class="outline-button">＋ Add device</button></div>
+      <div class="room-layout">
+        <div class="room-hero card"><span class="room-kicker">SELECTED ROOM</span><h2 id="roomTitle">Kitchen & dining</h2><p>Everything in your kitchen, connected in one place.</p><div class="room-visual">⌂</div><div class="room-stats"><span><b>22.1°</b><small>Temperature</small></span><span><b>48%</b><small>Humidity</small></span><span><b>4</b><small>Devices</small></span></div></div>
+        <div class="control-card card"><div class="section-heading"><div><span class="eyebrow">DEVICE CONTROL</span><h2>Everything else</h2></div><span class="online-label">● All online</span></div>
+          <div class="device-row"><span class="round-device orange">☼</span><span><b>Ceiling lights</b><small>Warm white · 80%</small></span><label class="switch"><input type="checkbox" checked data-device="Ceiling lights"><i></i></label></div>
+          <div class="device-row"><span class="round-device blue">❄</span><span><b>Air conditioning</b><small>Auto · 22°C</small></span><label class="switch"><input type="checkbox" checked data-device="Air conditioning"><i></i></label></div>
+          <div class="device-row"><span class="round-device purple">▣</span><span><b>Counter lights</b><small>Warm white · 65%</small></span><label class="switch"><input type="checkbox" data-device="Counter lights"><i></i></label></div>
+          <div class="device-row"><span class="round-device green">♧</span><span><b>Coffee machine</b><small>Standby mode</small></span><label class="switch"><input type="checkbox" data-device="Coffee machine"><i></i></label></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" id="view-climate">
+      <div class="page-heading"><div><span class="eyebrow">ENVIRONMENT</span><h1>Climate</h1><p class="subheading">A comfortable home, at just the right temperature.</p></div><div class="segmented"><button class="active">Today</button><button>This week</button></div></div>
+      <div class="thermostat-card card">
+        <div class="thermo-copy"><span class="eyebrow">MAIN THERMOSTAT</span><h2>Living room</h2><p>Heating is on · Maintaining your preferred temperature.</p><div class="temp-value"><strong id="thermoTemp">21.5</strong><span>°C</span></div><div class="temp-state"><i></i> Heating · Auto mode</div><div class="temp-actions"><button id="tempDown">−</button><button id="tempUp">＋</button><span>Target temperature</span></div></div>
+        <div class="thermometer"><div class="thermo-track"><div class="thermo-fill" id="thermoFill"></div><div class="thermo-bulb"></div></div><div class="thermo-ticks"><span>30°</span><span>25°</span><span>20°</span><span>15°</span></div></div>
+        <div class="thermo-side"><span class="eyebrow">OUTSIDE</span><strong>21.5°</strong><span>Partly cloudy</span><div class="sun-large">☀</div><small>Feels like 20°</small></div>
+      </div>
+      <div class="room-climates card"><div class="section-heading"><div><span class="eyebrow">ROOM CONDITIONS</span><h2>Temperature by room</h2></div><button class="subtle-button">Last updated just now</button></div>
+        <div class="climate-row"><span>Living room</span><div class="climate-bar"><i style="width:72%"></i></div><b>21.5°C</b></div>
+        <div class="climate-row"><span>Kitchen & dining</span><div class="climate-bar"><i style="width:78%"></i></div><b>22.1°C</b></div>
+        <div class="climate-row"><span>Bedroom</span><div class="climate-bar bluebar"><i style="width:62%"></i></div><b>19.8°C</b></div>
+        <div class="climate-row"><span>Bathroom</span><div class="climate-bar bluebar"><i style="width:66%"></i></div><b>20.2°C</b></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-energy">
+      <div class="page-heading"><div><span class="eyebrow">POWER & EFFICIENCY</span><h1>Energy</h1><p class="subheading">Your home is producing more than it consumes.</p></div><span class="online-label">● Live data</span></div>
+      <div class="energy-summary"><div class="metric card"><small>PRODUCED TODAY</small><strong>12.8 <i>kWh</i></strong><span>↑ 8.4% vs yesterday</span></div><div class="metric card"><small>CONSUMED TODAY</small><strong>8.2 <i>kWh</i></strong><span>↓ 4.1% vs yesterday</span></div><div class="metric card"><small>GRID SAVINGS</small><strong>€ 3.42</strong><span>Estimated savings</span></div></div>
+      <div class="chart-card card"><div class="section-heading"><div><span class="eyebrow">ENERGY OVERVIEW</span><h2>Production vs consumption</h2></div><span class="chart-legend"><i></i> Production <b></b> Consumption</span></div><div class="chart" aria-label="Energy chart"><div class="chart-grid"><span>3 kW</span><span>2 kW</span><span>1 kW</span><span>0 kW</span></div><svg viewBox="0 0 700 210" preserveAspectRatio="none"><defs><linearGradient id="area" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#efb45c" stop-opacity=".35"/><stop offset="1" stop-color="#efb45c" stop-opacity="0"/></linearGradient></defs><path d="M0 175 C70 168 70 112 140 105 S210 70 280 90 S350 35 420 60 S490 25 560 42 S630 18 700 24 L700 210 L0 210Z" fill="url(#area)"/><path d="M0 175 C70 168 70 112 140 105 S210 70 280 90 S350 35 420 60 S490 25 560 42 S630 18 700 24" fill="none" stroke="#e9a84e" stroke-width="3"/><path d="M0 190 C80 180 100 170 140 172 S230 150 280 157 S370 140 420 151 S510 133 560 140 S640 125 700 131" fill="none" stroke="#59a9c2" stroke-width="3"/></svg></div><div class="chart-times"><span>06:00</span><span>09:00</span><span>12:00</span><span>15:00</span><span>18:00</span><span>21:00</span></div></div>
+    </section>
+
+    <section class="view" id="view-security">
+      <div class="page-heading"><div><span class="eyebrow">PEACE OF MIND</span><h1>Security</h1><p class="subheading">Your home is protected and all entry points are secure.</p></div><span class="online-label">● System armed</span></div>
+      <div class="security-grid"><div class="security-card card"><span class="security-symbol">⌑</span><h2>Front door</h2><p>Locked · Last checked just now</p><span class="secure-state">● Secure</span></div><div class="security-card card"><span class="security-symbol">◉</span><h2>Living room camera</h2><p>Online · Motion detection active</p><span class="secure-state">● Recording</span></div><div class="security-card card"><span class="security-symbol">▱</span><h2>Window sensors</h2><p>All windows closed</p><span class="secure-state">● 8 sensors active</span></div></div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
